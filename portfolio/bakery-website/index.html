@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Crust Bakery — Fresh Baked Happiness</title>
+<style>
+  :root{
+    --brown:#5b3a1e; --cream:#fdf6ec; --gold:#d99a2b; --dark:#2e1d0e;
+    --text:#4a3b2c; --white:#fffdf9;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:Georgia,'Times New Roman',serif;color:var(--text);background:var(--cream);line-height:1.6}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;
+      padding:14px 6vw;background:rgba(46,29,14,.92);backdrop-filter:blur(6px)}
+  .logo{color:var(--gold);font-size:1.4rem;font-weight:bold;letter-spacing:1px}
+  .logo span{color:var(--white)}
+  nav ul{display:flex;gap:28px;list-style:none}
+  nav a{color:var(--white);text-decoration:none;font-size:.95rem;transition:color .2s}
+  nav a:hover{color:var(--gold)}
+
+  /* HERO */
+  header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(217,154,43,.25), transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(217,154,43,.18), transparent 50%),
+      linear-gradient(rgba(46,29,14,.78),rgba(46,29,14,.78)),
+      repeating-linear-gradient(45deg,#3a2613 0 24px,#33210f 24px 48px);
+    color:var(--white);padding:0 6vw}
+  header .badge{border:1px solid var(--gold);color:var(--gold);padding:6px 18px;border-radius:30px;
+    font-size:.85rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:22px}
+  header h1{font-size:clamp(2.4rem,6vw,4.5rem);margin-bottom:14px}
+  header h1 em{color:var(--gold);font-style:normal}
+  header p{max-width:560px;font-size:1.15rem;opacity:.9;margin-bottom:32px}
+  .btn{display:inline-block;background:var(--gold);color:var(--dark);padding:14px 36px;border-radius:6px;
+    text-decoration:none;font-weight:bold;letter-spacing:.5px;transition:transform .2s, box-shadow .2s}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.35)}
+  .btn.ghost{background:transparent;color:var(--white);border:2px solid var(--white);margin-left:14px}
+
+  section{padding:90px 6vw;max-width:1150px;margin:0 auto}
+  .kicker{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:.85rem;text-align:center}
+  h2{font-size:2.3rem;color:var(--brown);text-align:center;margin:8px 0 50px}
+
+  /* MENU */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px}
+  .card{background:var(--white);border-radius:14px;overflow:hidden;box-shadow:0 6px 22px rgba(91,58,30,.12);
+    transition:transform .25s, box-shadow .25s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 14px 32px rgba(91,58,30,.2)}
+  .card .pic{height:150px;display:flex;align-items:center;justify-content:center;font-size:4rem;
+    background:linear-gradient(135deg,#f3e3c3,#e8cf9f)}
+  .card .body{padding:22px}
+  .card h3{color:var(--brown);margin-bottom:6px;display:flex;justify-content:space-between}
+  .card h3 .price{color:var(--gold)}
+  .card p{font-size:.95rem}
+
+  /* ABOUT */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .about .photo{height:340px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:6rem;
+    background:linear-gradient(135deg,#5b3a1e,#8a5a2b);box-shadow:0 14px 36px rgba(91,58,30,.3)}
+  .about h2{text-align:left;margin-bottom:18px}
+  .about .kicker{text-align:left}
+  .stats{display:flex;gap:36px;margin-top:28px}
+  .stats div strong{display:block;font-size:1.9rem;color:var(--gold)}
+
+  /* TESTIMONIALS */
+  .quotes{background:var(--dark);color:var(--white);max-width:none}
+  .quotes h2{color:var(--white)}
+  .qgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;max-width:1150px;margin:0 auto}
+  .quote{background:rgba(255,255,255,.06);border:1px solid rgba(217,154,43,.35);border-radius:14px;padding:26px}
+  .quote p{font-style:italic;margin-bottom:14px}
+  .quote strong{color:var(--gold)}
+  .stars{color:var(--gold);letter-spacing:2px;margin-bottom:10px}
+
+  /* CONTACT */
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+  .contact h2,.contact .kicker{text-align:left}
+  .info p{margin-bottom:14px;font-size:1.05rem}
+  .info .ico{display:inline-block;width:28px}
+  form{background:var(--white);padding:30px;border-radius:14px;box-shadow:0 6px 22px rgba(91,58,30,.12)}
+  form label{display:block;font-size:.9rem;margin:14px 0 6px;color:var(--brown);font-weight:bold}
+  form input,form textarea{width:100%;padding:12px;border:1px solid #d9c8ae;border-radius:8px;font-family:inherit;font-size:1rem;background:var(--cream)}
+  form button{margin-top:20px;width:100%;border:none;cursor:pointer;font-size:1.05rem}
+
+  footer{background:var(--dark);color:#cbb89a;text-align:center;padding:28px 6vw;font-size:.9rem}
+  footer .logo{font-size:1.1rem;margin-bottom:6px}
+
+  @media(max-width:760px){
+    nav ul{display:none}
+    .about,.contact{grid-template-columns:1fr}
+    .btn.ghost{margin-left:0;margin-top:12px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Golden <span>Crust</span></div>
+  <ul>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header>
+  <div class="badge">Family Bakery · Since 1998</div>
+  <h1>Fresh Baked <em>Happiness</em>,<br>Every Single Morning</h1>
+  <p>Artisan breads, hand-crafted pastries and celebration cakes — baked from scratch daily with locally sourced ingredients.</p>
+  <div>
+    <a class="btn" href="#menu">See Our Menu</a>
+    <a class="btn ghost" href="#contact">Order a Cake</a>
+  </div>
+</header>
+
+<section id="menu">
+  <div class="kicker">Our Specialties</div>
+  <h2>Baked Fresh Today</h2>
+  <div class="grid">
+    <div class="card"><div class="pic">🥖</div><div class="body">
+      <h3>Artisan Sourdough <span class="price">$6.50</span></h3>
+      <p>48-hour fermented, crackling crust, soft airy crumb. Our signature loaf.</p></div></div>
+    <div class="card"><div class="pic">🥐</div><div class="body">
+      <h3>Butter Croissants <span class="price">$3.75</span></h3>
+      <p>27 delicate layers of French butter, baked golden every morning at 6 AM.</p></div></div>
+    <div class="card"><div class="pic">🎂</div><div class="body">
+      <h3>Celebration Cakes <span class="price">from $35</span></h3>
+      <p>Custom birthday and wedding cakes, designed with you, decorated by hand.</p></div></div>
+    <div class="card"><div class="pic">🍪</div><div class="body">
+      <h3>Choc-Chunk Cookies <span class="price">$2.50</span></h3>
+      <p>Crisp edges, gooey center, real Belgian chocolate chunks. Town famous.</p></div></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about">
+    <div class="photo">👨‍🍳</div>
+    <div>
+      <div class="kicker">Our Story</div>
+      <h2>Three Generations of Bakers</h2>
+      <p>What began as Grandma Rosa's tiny kitchen in 1998 is now the neighborhood's favorite morning stop. We still use her recipes, we still knead by hand, and we still believe a warm loaf can make anyone's day better.</p>
+      <div class="stats">
+        <div><strong>27+</strong>Years Baking</div>
+        <div><strong>40+</strong>Daily Fresh Items</div>
+        <div><strong>5★</strong>Local Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quotes" id="reviews">
+  <div class="kicker">Reviews</div>
+  <h2>What Our Customers Say</h2>
+  <div class="qgrid">
+    <div class="quote"><div class="stars">★★★★★</div>
+      <p>"The sourdough is unreal. I drive 20 minutes every Saturday just for this bread."</p>
+      <strong>— Sarah M.</strong></div>
+    <div class="quote"><div class="stars">★★★★★</div>
+      <p>"They made my daughter's birthday cake exactly like her drawing. She cried with joy!"</p>
+      <strong>— Ahmed K.</strong></div>
+    <div class="quote"><div class="stars">★★★★★</div>
+      <p>"Best croissants outside of Paris. The smell alone is worth the visit every morning."</p>
+      <strong>— Lena P.</strong></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <div class="info">
+      <div class="kicker">Visit Us</div>
+      <h2>Come Say Hello</h2>
+      <p><span class="ico">📍</span>123 Baker Street, Your Town</p>
+      <p><span class="ico">🕖</span>Mon–Sat: 7:00 AM – 6:00 PM · Sun: 8:00 AM – 2:00 PM</p>
+      <p><span class="ico">📞</span>(555) 123-4567</p>
+      <p><span class="ico">✉️</span>hello@goldencrust.example</p>
+    </div>
+    <form onsubmit="event.preventDefault();this.innerHTML='<h3 style=\'color:var(--brown);text-align:center;padding:60px 0\'>🥐 Thank you! We\'ll get back to you within a few hours.</h3>'">
+      <h3 style="color:var(--brown)">Order or Ask a Question</h3>
+      <label>Your Name</label><input required placeholder="Jane Doe">
+      <label>Email or Phone</label><input required placeholder="jane@email.com">
+      <label>Message</label><textarea rows="4" required placeholder="I'd like a chocolate birthday cake for 12 people…"></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Golden <span style="color:#fff">Crust</span></div>
+  © 2026 Golden Crust Bakery — Demo website. Built as a portfolio sample.
+</footer>
+
+</body>
+</html>

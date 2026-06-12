@@ -1,0 +1,14 @@
+# Generated output files
+portfolio/automation-demo/Sales_Report.xlsx
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Internal planning (not for public)
+GIGS.md
