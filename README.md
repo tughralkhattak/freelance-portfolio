@@ -46,5 +46,5 @@ See my dedicated repo: **[local-ai-chatbot](https://github.com/tughralkhattak/lo
 
 ## 📬 Work with me
 I build websites, automation scripts, and AI chatbots for small businesses.
-- **Email:** tughralkhattak@gmail.com
+- 💬 Message me through my **[GitHub profile](https://github.com/tughralkhattak)**.
 - Available for freelance projects — fast delivery, clear communication.
