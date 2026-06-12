@@ -11,6 +11,14 @@ A complete, modern, mobile-responsive website for a bakery — built with clean 
 
 **Features:** sticky navigation, full-screen hero, menu grid, story section with stats, customer reviews, working contact form, fully responsive down to mobile.
 
+![Bakery website hero](portfolio/screenshots/bakery_hero.png)
+
+<details><summary>📄 See the full page</summary>
+
+![Full bakery website](portfolio/screenshots/bakery_fullsite.png)
+
+</details>
+
 👉 Open `index.html` in any browser to view it.
 
 ---
@@ -19,6 +27,8 @@ A complete, modern, mobile-responsive website for a bakery — built with clean 
 **Folder:** [`portfolio/automation-demo`](portfolio/automation-demo)
 
 Turns a messy CSV of raw sales rows into a **clean, formatted Excel report** with totals, a per-product summary, and a bar chart — in one double-click. The kind of repetitive manual work I automate for clients.
+
+![Automation before and after](portfolio/screenshots/automation_report.png)
 
 **Handles real-world mess:** skips blank rows, strips `$` signs, ignores bad numbers, then outputs a styled multi-sheet `.xlsx` with a chart.
 
